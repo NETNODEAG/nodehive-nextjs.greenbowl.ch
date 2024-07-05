@@ -1,9 +1,15 @@
 import { FunctionComponent } from 'react';
 
-import ParagraphText, { ParagraphTextProps } from './text/ParagraphText';
+import ParagraphContent, {
+  ParagraphContentProps,
+} from './content/ParagraphContent';
+import ParagraphHeader, {
+  ParagraphHeaderProps,
+} from './header/ParagraphHeader';
 
 interface ParagraphPropMap {
-  'paragraph--text': ParagraphTextProps;
+  'paragraph--content': ParagraphContentProps;
+  'paragraph--header': ParagraphHeaderProps;
 }
 
 type ParagraphTypes = {
@@ -15,5 +21,6 @@ export function isParagraphType(key: string): key is keyof ParagraphTypes {
 }
 
 export const paragraphTypes: ParagraphTypes = {
-  'paragraph--text': ParagraphText,
+  'paragraph--content': ParagraphContent,
+  'paragraph--header': ParagraphHeader,
 };

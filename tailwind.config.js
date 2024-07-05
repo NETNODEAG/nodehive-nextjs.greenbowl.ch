@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require('tailwindcss/colors');
-
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,8 +11,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        black: '#09090b',
-        primary: colors.teal,
+        white: '#f3ece4',
+        black: '#000000',
+        primary: {
+          DEFAULT: 'var(--color-primary)',
+        },
+        secondary: {
+          DEFAULT: 'var(--color-secondary)',
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'sans-serif'],
+        unbounded: ['var(--font-unbounded)', 'sans-serif'],
       },
       // Customize typography for prose to match the theme colors/sizes/etc.
       // By default, prose uses a custom font-size, line-height, and color.

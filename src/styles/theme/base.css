@@ -1,9 +1,20 @@
 @layer base {
+  html,
+  html[data-theme='lucerne'] {
+    --color-primary: #dd5c35;
+    --color-secondary: #183d29;
+  }
+
+  html[data-theme='barcelona'] {
+    --color-primary: #eda700;
+    --color-secondary: #183d29;
+  }
+
   /*
   Base styles
   */
   body {
-    @apply font-sans text-base text-black antialiased;
+    @apply bg-white font-sans text-lg font-normal text-black antialiased md:text-xl;
   }
 
   /*
@@ -15,10 +26,30 @@
   h4,
   h5,
   h6 {
-    @apply break-words font-bold;
+    @apply font-unbounded break-words font-bold;
   }
 
   h1 {
-    @apply text-4xl;
+    @apply text-5xl md:text-8xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-2xl;
+  }
+
+  h6 {
+    @apply text-lg;
   }
 }
