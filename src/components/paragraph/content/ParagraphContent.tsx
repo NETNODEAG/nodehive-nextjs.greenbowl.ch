@@ -11,7 +11,9 @@ export default function ParagraphContent({ paragraph }: ParagraphContentProps) {
 
   return (
     <section data-paragraph-type="Content" className="paragraph">
-      {text && <FormattedText html={text?.processed} className="prose" />}
+      <div className="container-wrapper">
+        {text && <FormattedText html={text?.processed} className="prose" />}
+      </div>
     </section>
   );
 }

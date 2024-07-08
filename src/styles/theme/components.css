@@ -3,11 +3,11 @@
   Container
   */
   .max-container {
-    @apply w-full mx-auto max-w-7xl;
+    @apply mx-auto w-full max-w-7xl;
   }
 
   .container-wrapper {
-    @apply px-4 max-container md:px-8;
+    @apply max-container px-4 md:px-8;
   }
 
   /*
@@ -28,13 +28,22 @@
   Buttons
   */
   .btn {
-    @apply inline-flex h-fit items-center justify-center rounded-md uppercase px-5 py-1.5 text-lg font-unbounded font-semibold no-underline;
+    @apply inline-flex h-fit items-center justify-center rounded-md p-0 font-unbounded text-lg font-semibold uppercase tracking-wider;
+    @apply border border-transparent bg-transparent underline decoration-2 underline-offset-4;
     @apply transition-colors ease-in-out;
+    @apply focus:opacity-70;
+    @apply disabled:cursor-not-allowed disabled:opacity-30;
   }
 
   .btn-primary {
     @apply btn;
-    @apply text-white border border-transparent bg-neutral-900;
-    @apply hover:border-neutral-900 hover:bg-white hover:text-neutral-900;
+    @apply text-primary;
+    @apply hover:text-primary;
+  }
+
+  .btn-secondary {
+    @apply btn;
+    @apply text-secondary;
+    @apply hover:text-secondary;
   }
 }

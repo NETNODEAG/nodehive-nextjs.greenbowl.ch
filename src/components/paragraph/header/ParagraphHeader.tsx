@@ -15,7 +15,11 @@ export default function ParagraphHeader({ paragraph }: ParagraphHeaderProps) {
   return (
     <section data-paragraph-type="Header" className="paragraph">
       <div className="relative flex h-dvh max-h-[810px] items-center justify-center">
-        {title && <h1 className="z-10 text-center">{title}</h1>}
+        {title && (
+          <div className="container-wrapper flex items-center justify-center">
+            <h1 className="z-10 text-center text-white">{title}</h1>
+          </div>
+        )}
 
         <Image
           src={imageUrl}
@@ -24,6 +28,8 @@ export default function ParagraphHeader({ paragraph }: ParagraphHeaderProps) {
           height={1080}
           className="absolute inset-0 h-full w-full object-cover"
         />
+
+        <div className="absolute inset-0 bg-black opacity-50" />
       </div>
     </section>
   );

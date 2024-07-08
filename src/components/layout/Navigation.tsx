@@ -19,7 +19,10 @@ export default async function Navigation({ menuId }: NavigationProps) {
       <ul className="flex gap-8">
         {navigation?.data?.map((item) => (
           <li key={item.id}>
-            <Link href={item.url} className="font-semibold">
+            <Link
+              href={item.url}
+              className="text-lg font-semibold uppercase tracking-wider"
+            >
               {item.title}
             </Link>
           </li>
