@@ -3,9 +3,9 @@ import { FunctionComponent } from 'react';
 import ParagraphContent, {
   ParagraphContentProps,
 } from './content/ParagraphContent';
-import ParagraphHeader, {
-  ParagraphHeaderProps,
-} from './header/ParagraphHeader';
+import ParagraphEyecatcher, {
+  ParagraphEyecatcherProps,
+} from './eyecatcher/ParagraphEyecatcher';
 import ParagraphMedia, { ParagraphMediaProps } from './media/ParagraphMedia';
 import ParagraphTeaserList, {
   ParagraphTeaserListProps,
@@ -13,9 +13,9 @@ import ParagraphTeaserList, {
 
 interface ParagraphPropMap {
   'paragraph--content': ParagraphContentProps;
-  'paragraph--header': ParagraphHeaderProps;
   'paragraph--media': ParagraphMediaProps;
   'paragraph--teaser_list': ParagraphTeaserListProps;
+  'paragraph--eyecatcher': ParagraphEyecatcherProps;
 }
 
 type ParagraphTypes = {
@@ -28,7 +28,7 @@ export function isParagraphType(key: string): key is keyof ParagraphTypes {
 
 export const paragraphTypes: ParagraphTypes = {
   'paragraph--content': ParagraphContent,
-  'paragraph--header': ParagraphHeader,
   'paragraph--media': ParagraphMedia,
   'paragraph--teaser_list': ParagraphTeaserList,
+  'paragraph--eyecatcher': ParagraphEyecatcher,
 };

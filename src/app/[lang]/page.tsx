@@ -7,6 +7,7 @@ import { spaceConfig } from '@/nodehive/space-config';
 import { DrupalNode } from '@/nodehive/types';
 
 import { absoluteUrl } from '@/lib/utils';
+import MainLayout from '@/components/layout/MainLayout';
 import Node from '@/components/node/Node';
 
 interface RootPageProps {
@@ -85,12 +86,14 @@ export default async function RootPage({ params }: RootPageProps) {
     notFound();
   }
 
+  const headerVariant = entity?.data?.field_header_variant;
+
   return (
-    <>
+    <MainLayout lang={lang} variant={headerVariant}>
       {/* TODO: Fix the types correctly */}
       <Node node={entity as unknown as DrupalNode} />
 
       <SmartActionsButton />
-    </>
+    </MainLayout>
   );
 }

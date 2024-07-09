@@ -7,9 +7,6 @@ import { Metadata } from 'next';
 import { Inter, Unbounded } from 'next/font/google';
 import { Locale } from '@/nodehive/i18n-config';
 
-import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
-
 export const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -52,15 +49,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   return (
     <html lang={lang}>
       <body className={`${inter.variable} ${unbounded.variable}`}>
-        <div className="relative flex min-h-screen flex-col">
-          <Header lang={lang} />
-
-          <div className="flex-[1_0_auto]">
-            <main>{children}</main>
-          </div>
-
-          <Footer />
-        </div>
+        {children}
 
         <Connector />
       </body>

@@ -1,14 +1,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { cn } from '@/lib/utils';
 import Navigation from '@/components/layout/Navigation';
 
-export default async function Header({ lang }) {
+export default async function Header({ lang, variant }) {
   return (
-    <header className="z-20 bg-transparent py-6">
+    <header
+      className={cn(
+        variant === 'header-hero' && 'absolute left-0 right-0 top-0 text-white',
+        variant === 'header-stacking' &&
+          'absolute left-0 right-0 top-0 text-white',
+        variant === 'header-basic' && 'text-black',
+        'z-20 bg-transparent py-6'
+      )}
+    >
       <div className="container-wrapper">
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="font-bold">
+          <Link href="/" className={cn('font-bold')}>
             <Image
               src="/metadata/lucerne/logo.svg"
               alt="Logo"
