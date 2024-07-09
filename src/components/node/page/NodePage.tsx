@@ -13,7 +13,7 @@ export default function NodePage({ node }: NodePageProps) {
   return (
     <article data-node-type="Page">
       {Array.isArray(paragraphs) && (
-        <div className="mb-20 space-y-20">
+        <div>
           {paragraphs?.map((paragraph: DrupalParagraph) => {
             return <Paragraph key={paragraph.id} paragraph={paragraph} />;
           })}

@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import LanguageSwitcher from '@/components/layout/LanguageSwitcher';
 import Navigation from '@/components/layout/Navigation';
 
 export default async function Header({ lang }) {
   return (
-    <header className="absolute left-0 right-0 top-0 z-20 bg-transparent py-6 text-white">
+    <header className="z-20 bg-transparent py-6">
       <div className="container-wrapper">
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className="font-bold">
