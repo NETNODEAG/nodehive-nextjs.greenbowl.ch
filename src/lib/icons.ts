@@ -1,5 +1,5 @@
 // Site logo
-export { default as Logo } from 'public/logo.svg';
+export { default as Logo } from 'public/metadata/lucerne/logo.svg';
 
 // Social icons
 export { default as InstagramIcon } from 'public/icons/instagram.svg';

@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
+import { Logo } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import Navigation from '@/components/layout/Navigation';
 
@@ -18,12 +18,7 @@ export default async function Header({ lang, variant }) {
       <div className="container-wrapper">
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className={cn('font-bold')}>
-            <Image
-              src="/metadata/lucerne/logo.svg"
-              alt="Logo"
-              width={150}
-              height={50}
-            />
+            <Logo />
           </Link>
 
           {/* INFO: Add the id of the menu that you want to fetch */}
