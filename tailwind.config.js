@@ -24,6 +24,9 @@ module.exports = {
         sans: ['var(--font-inter)', 'sans-serif'],
         unbounded: ['var(--font-unbounded)', 'sans-serif'],
       },
+      borderWidth: {
+        3: '3px',
+      },
       // Customize typography for prose to match the theme colors/sizes/etc.
       // By default, prose uses a custom font-size, line-height, and color.
       typography: ({ theme }) => ({

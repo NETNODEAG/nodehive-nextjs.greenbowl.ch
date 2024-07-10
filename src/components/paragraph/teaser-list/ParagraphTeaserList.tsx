@@ -1,14 +1,18 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { createServerClient } from '@/nodehive/client';
+import { Locale } from '@/nodehive/i18n-config';
 import { DrupalParagraph } from '@/nodehive/types';
+
+import NodeEventTeaser from '@/components/node/event/NodeEventTeaser';
+import NodeJobTeaser from '@/components/node/job/NodeJobTeaser';
 
 export interface ParagraphTeaserListProps {
   paragraph: DrupalParagraph;
+  lang: Locale;
 }
 
 export default async function ParagraphTeaserList({
   paragraph,
+  lang,
 }: ParagraphTeaserListProps) {
   const client = createServerClient();
 
@@ -31,10 +35,6 @@ export default async function ParagraphTeaserList({
         contentNode = await client.getNode(node?.id, 'event');
       }
 
-      if (node?.type === 'node--page') {
-        contentNode = await client.getNode(node?.id, 'page');
-      }
-
       if (contentNode) {
         content.push(contentNode);
       }
@@ -42,21 +42,29 @@ export default async function ParagraphTeaserList({
   }
 
   return (
-    <section data-paragraph-type="TeaserList" className="paragraph py-48">
-      <div className="container-wrapper">
+    <section data-paragraph-type="TeaserList" className="py-12 md:py-20">
+      <div className="container-wrapper-sm">
         <ul className="grid gap-6">
           {content.map((node) => {
             const nodeData = node?.data;
-            const internalId = nodeData?.drupal_internal__nid;
-            const title = nodeData?.title;
+            const id = nodeData?.id;
+            const type = nodeData?.type;
 
-            return (
-              <li key={node.id} className="border-2 border-primary">
-                <Link href={`/node/${internalId}`} className="flex p-6">
-                  <h2>{title}</h2>
-                </Link>
-              </li>
-            );
+            if (type === 'node--event') {
+              return (
+                <li key={id}>
+                  <NodeEventTeaser node={node} lang={lang} />
+                </li>
+              );
+            }
+
+            if (type === 'node--job') {
+              return (
+                <li key={id}>
+                  <NodeJobTeaser node={node} lang={lang} />
+                </li>
+              );
+            }
           })}
         </ul>
       </div>

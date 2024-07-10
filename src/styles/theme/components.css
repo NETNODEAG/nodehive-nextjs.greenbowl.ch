@@ -33,6 +33,13 @@
   }
 
   /*
+  Byline
+  */
+  .byline {
+    @apply text-base uppercase tracking-[0.3rem] md:text-xl;
+  }
+
+  /*
   Buttons
   */
   .btn {
