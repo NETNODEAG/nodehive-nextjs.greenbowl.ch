@@ -22,7 +22,10 @@ export default function NodeJobTeaser({ node, lang }: NodeJobTeaserProps) {
       data-node-type="Job"
       className="border-3 rounded-md border-primary p-6"
     >
-      <Link href={link} className="grid grid-cols-1 md:grid-cols-3 items-center gap-4">
+      <Link
+        href={link}
+        className="grid grid-cols-1 items-center gap-6 md:grid-cols-3"
+      >
         <h2 className="md:col-span-2">{title}</h2>
 
         <ul className="md:text-right">
