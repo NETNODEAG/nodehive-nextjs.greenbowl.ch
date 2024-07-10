@@ -88,7 +88,15 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
-  const headerVariant = entity?.data?.field_header_variant;
+  let headerVariant = 'header-hero';
+
+  if (entity?.data?.type === 'node--page') {
+    headerVariant = entity.data.field_header_variant;
+  }
+
+  if (entity?.data?.type === 'node--job') {
+    headerVariant = 'header-basic';
+  }
 
   return (
     <MainLayout lang={lang} variant={headerVariant}>

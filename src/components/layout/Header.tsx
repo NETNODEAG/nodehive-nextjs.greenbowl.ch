@@ -4,7 +4,7 @@ import { Logo } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import Navigation from '@/components/layout/Navigation';
 
-export default async function Header({ lang, variant }) {
+export default async function Header({ lang, variant = 'header-hero' }) {
   return (
     <header
       className={cn(
