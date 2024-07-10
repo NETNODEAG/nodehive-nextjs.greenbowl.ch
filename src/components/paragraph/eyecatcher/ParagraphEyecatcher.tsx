@@ -33,7 +33,7 @@ export default function ParagraphEyecatcher({
     >
       <div className="container-wrapper flex flex-col justify-center">
         {byline && (
-          <p className="mb-2 text-center text-base uppercase leading-relaxed md:text-xl">
+          <p className="mb-2 text-center text-base uppercase tracking-[0.3rem] md:text-xl">
             {byline}
           </p>
         )}
