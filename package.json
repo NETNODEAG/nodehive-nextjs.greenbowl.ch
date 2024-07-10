@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build:tailwind && next build",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "test": "playwright test"
+    "test": "playwright test",
+    "build:tailwind": "tailwindcss -i ./src/styles/globals.css -o ./public/css/drupal.ckeditor.css -m"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
