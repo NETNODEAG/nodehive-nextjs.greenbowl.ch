@@ -15,16 +15,28 @@ export default function NodeJob({ node }: NodeJobProps) {
 
   return (
     <article data-node-type="Job">
-      <h1>{title}</h1>
+      <div className="container-wrapper flex flex-col items-center justify-center gap-6 pt-20">
+        <h1 className="text-center">{title}</h1>
 
-      <ul>
-        <li>{location}</li>
-        <li>{workload}</li>
-      </ul>
+        <ul className="text-center">
+          <li>
+            <p className="font-unbounded text-lg font-semibold uppercase">
+              {workload}
+            </p>
+          </li>
+          <li>
+            <p className="font-unbounded text-lg font-semibold uppercase tracking-wider text-primary">
+              {location}
+            </p>
+          </li>
+        </ul>
+      </div>
 
-      {description && (
-        <FormattedText html={description?.processed} className="prose" />
-      )}
+      <div className="container-wrapper-sm py-32 md:py-48">
+        {description && (
+          <FormattedText html={description?.processed} className="prose" />
+        )}
+      </div>
     </article>
   );
 }
