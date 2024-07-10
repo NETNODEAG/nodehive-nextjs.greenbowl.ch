@@ -15,6 +15,7 @@
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "drupal-jsonapi-params": "^2.3.1",
     "html-react-parser": "^5.1.10",
     "negotiator": "^0.6.3",
