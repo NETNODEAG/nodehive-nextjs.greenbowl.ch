@@ -91,7 +91,7 @@ export default async function RootPage({ params }: RootPageProps) {
   return (
     <MainLayout lang={lang} variant={headerVariant}>
       {/* TODO: Fix the types correctly */}
-      <Node node={entity as unknown as DrupalNode} />
+      <Node node={entity as unknown as DrupalNode} lang={lang} />
 
       <SmartActionsButton />
     </MainLayout>

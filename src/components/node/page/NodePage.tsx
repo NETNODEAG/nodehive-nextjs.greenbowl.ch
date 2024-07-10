@@ -1,3 +1,4 @@
+import { Locale } from '@/nodehive/i18n-config';
 import { DrupalNode, DrupalParagraph } from '@/nodehive/types';
 
 import { FormattedText } from '@/components/layout/FormattedText';
@@ -6,9 +7,10 @@ import NodeHeader from './NodeHeader';
 
 export interface NodePageProps {
   node: DrupalNode;
+  lang: Locale;
 }
 
-export default function NodePage({ node }: NodePageProps) {
+export default function NodePage({ node, lang }: NodePageProps) {
   const nodeData = node?.data;
   const headerVariant = nodeData?.field_header_variant;
   const headerText = nodeData?.field_header_text;
@@ -37,7 +39,9 @@ export default function NodePage({ node }: NodePageProps) {
       {Array.isArray(paragraphs) && (
         <>
           {paragraphs?.map((paragraph: DrupalParagraph) => {
-            return <Paragraph key={paragraph.id} paragraph={paragraph} />;
+            return (
+              <Paragraph key={paragraph.id} paragraph={paragraph} lang={lang} />
+            );
           })}
         </>
       )}

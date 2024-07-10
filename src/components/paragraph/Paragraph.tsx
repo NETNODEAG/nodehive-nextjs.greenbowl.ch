@@ -1,20 +1,23 @@
 import VisualEditorParagraphWrapper from '@/nodehive/components/visual-editor/paragraph/paragraph-wrapper';
+import { Locale } from '@/nodehive/i18n-config';
 import { DrupalParagraph } from '@/nodehive/types';
 
 import { isParagraphType, paragraphTypes } from './paragraphs';
 
 interface ParagraphProps {
   paragraph: DrupalParagraph;
+  lang: Locale;
 }
 
-export default function Paragraph({ paragraph }: ParagraphProps) {
+export default function Paragraph({ paragraph, lang }: ParagraphProps) {
   const paragraphType = paragraph?.type;
 
   if (isParagraphType(paragraphType)) {
     const ParagraphInstance = paragraphTypes[paragraphType];
+
     return (
       <VisualEditorParagraphWrapper entity={paragraph}>
-        <ParagraphInstance paragraph={paragraph} />
+        <ParagraphInstance paragraph={paragraph} lang={lang} />
       </VisualEditorParagraphWrapper>
     );
   }
