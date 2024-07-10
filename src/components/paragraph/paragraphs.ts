@@ -10,12 +10,16 @@ import ParagraphMedia, { ParagraphMediaProps } from './media/ParagraphMedia';
 import ParagraphTeaserList, {
   ParagraphTeaserListProps,
 } from './teaser-list/ParagraphTeaserList';
+import ParagraphWebform, {
+  ParagraphWebformProps,
+} from './webform/ParagraphWebform';
 
 interface ParagraphPropMap {
   'paragraph--content': ParagraphContentProps;
   'paragraph--media': ParagraphMediaProps;
   'paragraph--teaser_list': ParagraphTeaserListProps;
   'paragraph--eyecatcher': ParagraphEyecatcherProps;
+  'paragraph--webform': ParagraphWebformProps;
 }
 
 type ParagraphTypes = {
@@ -31,4 +35,5 @@ export const paragraphTypes: ParagraphTypes = {
   'paragraph--media': ParagraphMedia,
   'paragraph--teaser_list': ParagraphTeaserList,
   'paragraph--eyecatcher': ParagraphEyecatcher,
+  'paragraph--webform': ParagraphWebform,
 };
