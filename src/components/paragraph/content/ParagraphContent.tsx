@@ -7,20 +7,12 @@ export interface ParagraphContentProps {
 }
 
 export default function ParagraphContent({ paragraph }: ParagraphContentProps) {
-  const text = paragraph.field_content_text;
+  const text = paragraph?.field_content_text;
 
   return (
-    <section
-      data-paragraph-type="Content"
-      className="bg-primary py-48 text-white"
-    >
-      <div className="container-wrapper">
-        {text && (
-          <FormattedText
-            html={text?.processed}
-            className="prose text-center font-unbounded text-6xl font-bold leading-tight text-white"
-          />
-        )}
+    <section data-paragraph-type="Content" className="py-12 md:py-20">
+      <div className="container-wrapper-sm">
+        {text && <FormattedText html={text?.processed} className="prose" />}
       </div>
     </section>
   );

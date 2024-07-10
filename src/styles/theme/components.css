@@ -6,8 +6,16 @@
     @apply mx-auto w-full max-w-7xl;
   }
 
+  .max-container-sm {
+    @apply mx-auto w-full max-w-4xl;
+  }
+
   .container-wrapper {
     @apply max-container px-4 md:px-8;
+  }
+
+  .container-wrapper-sm {
+    @apply max-container-sm px-4 md:px-8;
   }
 
   /*
