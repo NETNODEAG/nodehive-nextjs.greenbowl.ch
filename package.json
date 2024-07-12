@@ -14,6 +14,7 @@
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
     "@iframe-resizer/react": "^5.1.5",
+    "@splidejs/react-splide": "^0.7.12",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "clsx": "^2.1.1",
