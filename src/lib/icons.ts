@@ -13,3 +13,4 @@ export { default as ChevronDownIcon } from 'public/icons/chevron-down.svg';
 export { default as EditIcon } from 'public/icons/edit.svg';
 export { default as CloseIcon } from 'public/icons/close.svg';
 export { default as HamburguerIcon } from 'public/icons/menu.svg';
+export { default as SendIcon } from 'public/icons/send.svg';
