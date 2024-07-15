@@ -7,6 +7,8 @@ export const NodeHiveConfig = {
         'field_paragraphs',
         'field_paragraphs.field_media_ref_media',
         'field_paragraphs.field_media_ref_media.field_media_image',
+        'field_paragraphs.field_content_media',
+        'field_paragraphs.field_content_media.field_media_image',
       ],
     },
     'node-event': {

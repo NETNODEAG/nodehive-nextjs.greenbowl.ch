@@ -1,5 +1,8 @@
 import { FunctionComponent } from 'react';
 
+import ParagraphContentColumns, {
+  ParagraphContentColumnsProps,
+} from './content-columns/ParagraphContentColumns';
 import ParagraphContent, {
   ParagraphContentProps,
 } from './content/ParagraphContent';
@@ -24,6 +27,7 @@ interface ParagraphPropMap {
   'paragraph--eyecatcher': ParagraphEyecatcherProps;
   'paragraph--webform': ParagraphWebformProps;
   'paragraph--cta': ParagraphCallToActionProps;
+  'paragraph--content_columns': ParagraphContentColumnsProps;
 }
 
 type ParagraphTypes = {
@@ -41,4 +45,5 @@ export const paragraphTypes: ParagraphTypes = {
   'paragraph--eyecatcher': ParagraphEyecatcher,
   'paragraph--webform': ParagraphWebform,
   'paragraph--cta': ParagraphCallToAction,
+  'paragraph--content_columns': ParagraphContentColumns,
 };
