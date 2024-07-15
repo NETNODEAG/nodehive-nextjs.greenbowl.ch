@@ -3,6 +3,9 @@ import { FunctionComponent } from 'react';
 import ParagraphContent, {
   ParagraphContentProps,
 } from './content/ParagraphContent';
+import ParagraphCallToAction, {
+  ParagraphCallToActionProps,
+} from './cta/ParagraphCallToAction';
 import ParagraphEyecatcher, {
   ParagraphEyecatcherProps,
 } from './eyecatcher/ParagraphEyecatcher';
@@ -20,6 +23,7 @@ interface ParagraphPropMap {
   'paragraph--teaser_list': ParagraphTeaserListProps;
   'paragraph--eyecatcher': ParagraphEyecatcherProps;
   'paragraph--webform': ParagraphWebformProps;
+  'paragraph--cta': ParagraphCallToActionProps;
 }
 
 type ParagraphTypes = {
@@ -36,4 +40,5 @@ export const paragraphTypes: ParagraphTypes = {
   'paragraph--teaser_list': ParagraphTeaserList,
   'paragraph--eyecatcher': ParagraphEyecatcher,
   'paragraph--webform': ParagraphWebform,
+  'paragraph--cta': ParagraphCallToAction,
 };
