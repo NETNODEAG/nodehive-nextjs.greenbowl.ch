@@ -25,7 +25,7 @@ export default async function Header({ lang, variant = 'header-hero' }) {
           {/* You can uncomment the line below or remove it. It's just an example */}
           <Navigation menuId="main-lucerne" />
 
-          <Link href="/" className="btn-primary">
+          <Link href="/node/11" className="btn-primary">
             Book a table
           </Link>
         </div>

@@ -19,7 +19,7 @@ export default function ParagraphWebform({
   return (
     <section
       data-paragraph-type="Webform"
-      className="paragraph container-wrapper-sm px-1 md:px-8"
+      className="container-wrapper-sm py-12 md:py-20"
     >
       {webformId && (
         <IframeResizer
