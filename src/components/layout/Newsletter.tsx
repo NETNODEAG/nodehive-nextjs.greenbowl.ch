@@ -10,7 +10,7 @@ export default function Newsletter() {
   const [state, dispatch] = useFormState(subscribe, initialState);
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex max-w-[450px] flex-col gap-6">
       <h3 className="text-primary">Stay up to date with our Newsletter</h3>
 
       <form action={dispatch} className="space-y-2">
