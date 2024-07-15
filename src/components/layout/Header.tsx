@@ -1,10 +1,33 @@
 import Link from 'next/link';
+import { createServerClient } from '@/nodehive/client';
 
 import { Logo } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import Navigation from '@/components/layout/Navigation';
+import FlyoutNavigation from './Flyoutnavigation';
 
 export default async function Header({ lang, variant = 'header-hero' }) {
+  const client = createServerClient();
+
+  const navigation = await client.getMenuItems('main-lucerne');
+
+  if (!navigation?.data?.length) {
+    return null;
+  }
+
+  const mainNavigation = Object.values(
+    navigation?.data?.reduce((acc, item) => {
+      if (!item.parent) {
+        // This is a parent menu item
+        acc[item.id] = { ...item, subMenu: [] };
+      } else if (acc[item.parent]) {
+        // This is a submenu item for an existing parent
+        acc[item.parent].subMenu.push(item);
+      }
+      return acc;
+    }, {})
+  );
+
   return (
     <header
       className={cn(
@@ -23,11 +46,13 @@ export default async function Header({ lang, variant = 'header-hero' }) {
 
           {/* INFO: Add the id of the menu that you want to fetch */}
           {/* You can uncomment the line below or remove it. It's just an example */}
-          <Navigation menuId="main-lucerne" />
+          <Navigation menu={mainNavigation} />
 
-          <Link href="/node/11" className="btn-primary">
+          <Link href="/node/11" className="btn-primary hidden md:block">
             Book a table
           </Link>
+
+          <FlyoutNavigation menu={mainNavigation} />
         </div>
       </div>
     </header>

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { createServerClient } from '@/nodehive/client';
 
 import {
   Menubar,
@@ -7,38 +6,13 @@ import {
   MenubarItem,
   MenubarMenu,
   MenubarTrigger,
-} from '../ui/menubar';
+} from '@/components/ui/menubar';
 
-interface NavigationProps {
-  menuId: string;
-}
-
-export default async function Navigation({ menuId }: NavigationProps) {
-  const client = createServerClient();
-
-  const navigation = await client.getMenuItems(menuId);
-
-  if (!navigation?.data?.length) {
-    return null;
-  }
-
-  const mainNavigation = Object.values(
-    navigation?.data?.reduce((acc, item) => {
-      if (!item.parent) {
-        // This is a parent menu item
-        acc[item.id] = { ...item, subMenu: [] };
-      } else if (acc[item.parent]) {
-        // This is a submenu item for an existing parent
-        acc[item.parent].subMenu.push(item);
-      }
-      return acc;
-    }, {})
-  );
-
+export default function Navigation({ menu }) {
   return (
     <nav className="hidden md:block">
       <Menubar className="bg-transparent">
-        {mainNavigation?.map((item: any) => (
+        {menu?.map((item: any) => (
           <MenubarMenu key={item?.id}>
             {item.subMenu.length > 0 ? (
               <MenubarTrigger>{item?.title}</MenubarTrigger>
