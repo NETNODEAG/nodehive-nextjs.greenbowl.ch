@@ -1,5 +1,6 @@
 // Site logo
-export { default as Logo } from 'public/metadata/lucerne/logo.svg';
+export { default as LogoLucerne } from 'public/metadata/lucerne/logo.svg';
+export { default as LogoBarcelona } from 'public/metadata/barcelona/logo.svg';
 
 // Social icons
 export { default as InstagramIcon } from 'public/icons/instagram.svg';

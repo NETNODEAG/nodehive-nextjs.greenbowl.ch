@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { createServerClient } from '@/nodehive/client';
+import { space } from '@/nodehive/space-config';
 
-import { Logo } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import Navigation from '@/components/layout/Navigation';
 import FlyoutNavigation from './Flyoutnavigation';
@@ -28,6 +28,8 @@ export default async function Header({ lang, variant = 'header-hero' }) {
     }, {})
   );
 
+  const LogoComponent = space.logo;
+
   return (
     <header
       className={cn(
@@ -41,7 +43,7 @@ export default async function Header({ lang, variant = 'header-hero' }) {
       <div className="container-wrapper">
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className={cn('font-bold')}>
-            <Logo />
+            <LogoComponent />
           </Link>
 
           {/* INFO: Add the id of the menu that you want to fetch */}

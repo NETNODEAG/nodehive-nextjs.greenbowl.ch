@@ -1,5 +1,5 @@
 import Connector from '@/nodehive/connector';
-import { spaceConfig } from '@/nodehive/space-config';
+import { space } from '@/nodehive/space-config';
 
 import '@/styles/globals.css';
 
@@ -19,21 +19,19 @@ export const unbounded = Unbounded({
   variable: '--font-unbounded',
 });
 
-const { spaceMetadata } = spaceConfig;
-
 /**
  * The metadata
  * @type {Metadata}
  */
 export const metadata: Metadata = {
-  metadataBase: new URL(spaceMetadata.baseUrl),
+  metadataBase: new URL(space.spaceMetadata.baseUrl),
   title: {
-    template: spaceMetadata.title.template,
-    default: spaceMetadata.title.default,
+    template: space.spaceMetadata.title.template,
+    default: space.spaceMetadata.title.default,
   },
-  description: spaceMetadata.description,
-  icons: spaceMetadata.icons,
-  openGraph: spaceMetadata.openGraph,
+  description: space.spaceMetadata.description,
+  icons: space.spaceMetadata.icons,
+  openGraph: space.spaceMetadata.openGraph,
 };
 
 interface LayoutProps {
@@ -47,7 +45,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   const { lang } = params;
 
   return (
-    <html lang={lang}>
+    <html lang={lang} data-theme={space?.theme}>
       <body className={`${inter.variable} ${unbounded.variable}`}>
         {children}
 

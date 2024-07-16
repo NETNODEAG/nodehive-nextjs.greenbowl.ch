@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { createServerClient } from '@/nodehive/client';
 import SmartActionsButton from '@/nodehive/components/smart-actions/smart-actions-button';
 import { Locale } from '@/nodehive/i18n-config';
-import { spaceConfig } from '@/nodehive/space-config';
+import { space } from '@/nodehive/space-config';
 import { DrupalNode } from '@/nodehive/types';
 
 import { absoluteUrl } from '@/lib/utils';
@@ -29,8 +29,6 @@ export async function generateMetadata({
     lang
   );
 
-  const { spaceMetadata } = spaceConfig;
-
   // Drupal metadata
   const entityData = entity?.data;
   const title = entityData?.title;
@@ -38,18 +36,18 @@ export async function generateMetadata({
   const image = entityData?.field_media?.field_media_image?.uri?.url;
 
   // SEO metadata
-  let seoTitle = title || spaceMetadata.openGraph.title;
-  let seoDescription = teaser || spaceMetadata.openGraph.description;
-  let seoImage = image ? absoluteUrl(image) : spaceMetadata.ogImage;
+  let seoTitle = title || space.spaceMetadata.openGraph.title;
+  let seoDescription = teaser || space.spaceMetadata.openGraph.description;
+  let seoImage = image ? absoluteUrl(image) : space.spaceMetadata.ogImage;
 
   return {
     title: {
-      template: spaceMetadata.title.template,
+      template: space.spaceMetadata.title.template,
       default: seoTitle,
     },
     description: seoDescription,
     openGraph: {
-      siteName: spaceMetadata.openGraph.siteName,
+      siteName: space.spaceMetadata.openGraph.siteName,
       title: seoTitle,
       description: seoDescription,
       locale: lang,
