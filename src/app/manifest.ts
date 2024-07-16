@@ -1,13 +1,11 @@
 import { MetadataRoute } from 'next';
-import { spaceConfig } from '@/nodehive/space-config';
+import { space } from '@/nodehive/space-config';
 
 export default function manifest(): MetadataRoute.Manifest {
-  const { siteName, shortName, themeColor, spaceMetadata } = spaceConfig;
-
   return {
-    name: siteName,
-    short_name: shortName,
-    description: spaceMetadata.description,
+    name: space?.siteName,
+    short_name: space?.shortName,
+    description: space?.spaceMetadata.description,
     start_url: '/',
     icons: [
       {
@@ -44,6 +42,6 @@ export default function manifest(): MetadataRoute.Manifest {
     display: 'standalone',
     orientation: 'portrait',
     background_color: '#ffffff',
-    theme_color: themeColor,
+    theme_color: space?.themeColor,
   };
 }
