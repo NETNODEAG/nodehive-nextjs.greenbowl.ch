@@ -1,16 +1,19 @@
 import Link from 'next/link';
+import { space } from '@/nodehive/space-config';
 import { DialogTrigger } from '@radix-ui/react-dialog';
 
-import { HamburguerIcon, Logo } from '@/lib/icons';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { HamburguerIcon } from '@/lib/icons';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '../ui/accordion';
+} from '@/components/ui/accordion';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 
 export default function FlyoutNavigation({ menu }) {
+  const LogoComponent = space.logo;
+
   return (
     <Dialog>
       <DialogTrigger className="block md:hidden">
@@ -19,7 +22,7 @@ export default function FlyoutNavigation({ menu }) {
 
       <DialogContent>
         <div className="space-y-20">
-          <Logo />
+          <LogoComponent />
 
           <ul className="flex flex-col gap-10">
             {menu?.map((item: any) => (
