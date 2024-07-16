@@ -28,7 +28,7 @@ export default function NodeHeader({ title, media, variant }) {
         {variant === 'header-stacking' && (
           <>
             {title && (
-              <div className="absolute bottom-0 left-0 right-0 z-20 text-primary">
+              <div className="absolute bottom-4 left-0 right-0 z-20 text-primary md:-bottom-[40px]">
                 <div className="container-wrapper flex items-center justify-center">
                   <FormattedText
                     html={title?.processed}
