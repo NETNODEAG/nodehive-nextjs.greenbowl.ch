@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { cookieUserToken } from '@/nodehive/client';
 import LoginForm from '@/nodehive/components/auth/LoginForm';
@@ -12,10 +13,14 @@ export default function Page() {
   }
 
   return (
-    <section className="space-y-8">
+    <section className="container mx-auto mt-10 space-y-8 px-6">
       <h1>Login</h1>
 
       <LoginForm />
+
+      <Link href="/" className="btn-primary">
+        Back to frontpage
+      </Link>
     </section>
   );
 }

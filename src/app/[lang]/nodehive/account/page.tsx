@@ -17,7 +17,7 @@ export default async function Page() {
   const email = user?.mail?.[0]?.value;
 
   return (
-    <section className="space-y-8">
+    <section className="container mx-auto mt-10 space-y-8">
       <h1>Account</h1>
 
       <div className="space-y-4">
