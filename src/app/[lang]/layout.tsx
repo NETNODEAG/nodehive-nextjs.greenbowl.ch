@@ -7,13 +7,13 @@ import { Metadata } from 'next';
 import { Inter, Unbounded } from 'next/font/google';
 import { Locale } from '@/nodehive/i18n-config';
 
-export const inter = Inter({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
 });
 
-export const unbounded = Unbounded({
+const unbounded = Unbounded({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-unbounded',

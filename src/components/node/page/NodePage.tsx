@@ -1,3 +1,5 @@
+import { AuthWrapper } from '@/nodehive/components/auth/AuthWrapper';
+import NodeEditButton from '@/nodehive/components/visual-editor/node/node-edit-button';
 import { Locale } from '@/nodehive/i18n-config';
 import { DrupalNode, DrupalParagraph } from '@/nodehive/types';
 
@@ -19,6 +21,9 @@ export default function NodePage({ node, lang }: NodePageProps) {
 
   return (
     <article data-node-type="Page">
+      <AuthWrapper>
+        <NodeEditButton node={node} />
+      </AuthWrapper>
       {headerImage?.id ? (
         <NodeHeader
           title={headerText}
