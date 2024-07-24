@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import { createServerClient } from '@/nodehive/client';
+import { AuthWrapper } from '@/nodehive/components/auth/AuthWrapper';
+import FragmentEditButton from '@/nodehive/components/visual-editor/fragment/fragment-edit-button';
+import { DrupalFragment } from '@/nodehive/types';
+import Debug from '@/ui/netnode/debug';
 
+import Fragment from '../fragment/Fragment';
 import Newsletter from './Newsletter';
 
 export default async function Footer() {
@@ -10,6 +15,7 @@ export default async function Footer() {
     'e968c32e-8cde-48fb-9bcd-effc4cb8ed69',
     'text'
   );
+  console.log('fragment', fragment);
   const menu = await client.getMenuItems('footer-lucerne');
 
   return (
@@ -28,6 +34,7 @@ export default async function Footer() {
         </div>
 
         <div className="justify-self-end md:col-span-3">
+          <Fragment fragment={fragment as unknown as DrupalFragment} />
           {fragment?.data?.field_text_content && (
             <div
               dangerouslySetInnerHTML={{

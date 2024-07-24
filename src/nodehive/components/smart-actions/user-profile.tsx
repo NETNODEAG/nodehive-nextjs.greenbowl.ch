@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { readUserDetails } from '@/actions/_user';
 
 import { cn } from '@/lib/utils';
@@ -12,7 +13,7 @@ export default async function UserProfile() {
         'flex h-[32px] w-[32px] cursor-default items-center justify-center rounded-full border border-neutral-700 text-white transition-colors hover:border-neutral-700 hover:bg-neutral-700'
       )}
     >
-      <span>
+      <Link href={process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}>
         <span className="sr-only">User Profile</span>
 
         {user?.user_picture[0]?.url ? (
@@ -39,7 +40,7 @@ export default async function UserProfile() {
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
         )}
-      </span>
+      </Link>
     </button>
   );
 }

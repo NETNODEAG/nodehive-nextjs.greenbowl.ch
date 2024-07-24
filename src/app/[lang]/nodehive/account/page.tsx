@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { logout } from '@/actions/_auth';
 import { getUser } from '@/actions/_user';
@@ -37,6 +38,9 @@ export default async function Page() {
           </li>
         </ul>
       </div>
+      <Link href="/" className="btn-primary">
+        Back to frontpage
+      </Link>
     </section>
   );
 }

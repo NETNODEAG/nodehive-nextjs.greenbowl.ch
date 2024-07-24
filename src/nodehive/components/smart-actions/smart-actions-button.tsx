@@ -12,7 +12,7 @@ export default function SmartActionsButton() {
         <div className="rounded-full bg-neutral-900 p-2 text-sm font-bold text-white shadow-[0_8px_40px_rgba(0,0,0,0.25)] shadow-white/20 backdrop-blur-2xl">
           <ul className="flex items-center gap-2">
             <li>
-              <Tooltip label="User">
+              <Tooltip label="Dashboard">
                 <UserProfile />
               </Tooltip>
             </li>
