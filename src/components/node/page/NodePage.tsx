@@ -3,6 +3,7 @@ import NodeEditButton from '@/nodehive/components/visual-editor/node/node-edit-b
 import { Locale } from '@/nodehive/i18n-config';
 import { DrupalNode, DrupalParagraph } from '@/nodehive/types';
 
+import AnimatedWrapper from '@/components/animations/AnimtedWrapper';
 import { FormattedText } from '@/components/layout/FormattedText';
 import Paragraph from '@/components/paragraph/Paragraph';
 import NodeHeader from './NodeHeader';
@@ -24,6 +25,7 @@ export default function NodePage({ node, lang }: NodePageProps) {
       <AuthWrapper>
         <NodeEditButton node={node} />
       </AuthWrapper>
+
       {headerImage?.id ? (
         <NodeHeader
           title={headerText}
@@ -33,10 +35,12 @@ export default function NodePage({ node, lang }: NodePageProps) {
       ) : (
         <>
           {headerText && (
-            <FormattedText
-              html={headerText?.processed}
-              className="py-20 text-center"
-            />
+            <AnimatedWrapper>
+              <FormattedText
+                html={headerText?.processed}
+                className="py-20 text-center"
+              />
+            </AnimatedWrapper>
           )}
         </>
       )}

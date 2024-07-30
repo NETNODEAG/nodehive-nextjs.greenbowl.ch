@@ -3,6 +3,7 @@ import { Locale } from '@/nodehive/i18n-config';
 import { DrupalNode, DrupalParagraph } from '@/nodehive/types';
 import { format } from 'date-fns';
 
+import AnimatedWrapper from '@/components/animations/AnimtedWrapper';
 import Paragraph from '@/components/paragraph/Paragraph';
 
 export interface NodeEventProps {
@@ -24,33 +25,35 @@ export default function NodeEvent({ node, lang }: NodeEventProps) {
 
   return (
     <article data-node-type="Event">
-      <div className="relative flex h-dvh max-h-[810px] items-center justify-center">
-        {title && (
-          <div className="container-wrapper flex items-center justify-center">
-            <div className="z-10 flex flex-col items-center justify-center">
-              <p className="byline mb-3 text-white">
-                {format(date, 'd MMMM yyyy, HH:SS')}
-              </p>
+      <AnimatedWrapper>
+        <div className="relative flex h-dvh max-h-[810px] items-center justify-center">
+          {title && (
+            <div className="container-wrapper flex items-center justify-center">
+              <div className="z-10 flex flex-col items-center justify-center">
+                <p className="byline mb-3 text-white">
+                  {format(date, 'd MMMM yyyy, HH:SS')}
+                </p>
 
-              <h1 className="text-center text-white">{title}</h1>
+                <h1 className="text-center text-white">{title}</h1>
 
-              <p className="mt-6 font-unbounded text-lg font-semibold uppercase tracking-wider text-primary">
-                {location}
-              </p>
+                <p className="mt-6 font-unbounded text-lg font-semibold uppercase tracking-wider text-primary">
+                  {location}
+                </p>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        <Image
-          src={imageUrl}
-          alt={imageAlt}
-          width={1920}
-          height={1080}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            width={1920}
+            height={1080}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
 
-        <div className="absolute inset-0 bg-black opacity-50" />
-      </div>
+          <div className="absolute inset-0 bg-black opacity-50" />
+        </div>
+      </AnimatedWrapper>
 
       {Array.isArray(paragraphs) && (
         <>
