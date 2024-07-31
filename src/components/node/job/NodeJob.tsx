@@ -1,6 +1,6 @@
 import { DrupalNode } from '@/nodehive/types';
 
-import AnimatedWrapper from '@/components/animations/AnimtedWrapper';
+import AnimatedWrapper from '@/components/animation/AnimtedWrapper';
 import { FormattedText } from '@/components/layout/FormattedText';
 
 export interface NodeJobProps {

@@ -2,7 +2,7 @@ import VisualEditorParagraphWrapper from '@/nodehive/components/visual-editor/pa
 import { Locale } from '@/nodehive/i18n-config';
 import { DrupalParagraph } from '@/nodehive/types';
 
-import AnimatedWrapper from '../animations/AnimtedWrapper';
+import AnimatedWrapper from '../animation/AnimtedWrapper';
 import { isParagraphType, paragraphTypes } from './paragraphs';
 
 interface ParagraphProps {

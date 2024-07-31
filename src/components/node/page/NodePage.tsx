@@ -3,7 +3,7 @@ import NodeEditButton from '@/nodehive/components/visual-editor/node/node-edit-b
 import { Locale } from '@/nodehive/i18n-config';
 import { DrupalNode, DrupalParagraph } from '@/nodehive/types';
 
-import AnimatedWrapper from '@/components/animations/AnimtedWrapper';
+import AnimatedWrapper from '@/components/animation/AnimtedWrapper';
 import { FormattedText } from '@/components/layout/FormattedText';
 import Paragraph from '@/components/paragraph/Paragraph';
 import NodeHeader from './NodeHeader';

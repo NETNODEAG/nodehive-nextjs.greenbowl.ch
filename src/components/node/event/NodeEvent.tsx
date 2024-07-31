@@ -3,7 +3,7 @@ import { Locale } from '@/nodehive/i18n-config';
 import { DrupalNode, DrupalParagraph } from '@/nodehive/types';
 import { format } from 'date-fns';
 
-import AnimatedWrapper from '@/components/animations/AnimtedWrapper';
+import AnimatedWrapper from '@/components/animation/AnimtedWrapper';
 import Paragraph from '@/components/paragraph/Paragraph';
 
 export interface NodeEventProps {

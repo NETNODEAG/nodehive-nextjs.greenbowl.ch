@@ -5,7 +5,7 @@ import FragmentEditButton from '@/nodehive/components/visual-editor/fragment/fra
 import { DrupalFragment } from '@/nodehive/types';
 import Debug from '@/ui/netnode/debug';
 
-import AnimatedWrapper from '../animations/AnimtedWrapper';
+import AnimatedWrapper from '../animation/AnimtedWrapper';
 import Fragment from '../fragment/Fragment';
 import Newsletter from './Newsletter';
 
