@@ -27,6 +27,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "drupal-jsonapi-params": "^2.3.1",
+    "framer-motion": "^11.3.19",
     "html-react-parser": "^5.1.10",
     "negotiator": "^0.6.3",
     "next": "^14.2.5",

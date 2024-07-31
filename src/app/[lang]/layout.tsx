@@ -46,7 +46,9 @@ export default async function RootLayout({ children, params }: LayoutProps) {
 
   return (
     <html lang={lang} data-theme={space?.theme}>
-      <body className={`${inter.variable} ${unbounded.variable}`}>
+      <body
+        className={`${inter.variable} ${unbounded.variable} overflow-y-scroll`}
+      >
         {children}
 
         <Connector />

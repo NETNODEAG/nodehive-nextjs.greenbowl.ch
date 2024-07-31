@@ -2,6 +2,7 @@ import VisualEditorParagraphWrapper from '@/nodehive/components/visual-editor/pa
 import { Locale } from '@/nodehive/i18n-config';
 import { DrupalParagraph } from '@/nodehive/types';
 
+import AnimatedWrapper from '../animation/AnimtedWrapper';
 import { isParagraphType, paragraphTypes } from './paragraphs';
 
 interface ParagraphProps {
@@ -16,9 +17,11 @@ export default function Paragraph({ paragraph, lang }: ParagraphProps) {
     const ParagraphInstance = paragraphTypes[paragraphType];
 
     return (
-      <VisualEditorParagraphWrapper entity={paragraph}>
-        <ParagraphInstance paragraph={paragraph} lang={lang} />
-      </VisualEditorParagraphWrapper>
+      <AnimatedWrapper>
+        <VisualEditorParagraphWrapper entity={paragraph}>
+          <ParagraphInstance paragraph={paragraph} lang={lang} />
+        </VisualEditorParagraphWrapper>
+      </AnimatedWrapper>
     );
   }
 
